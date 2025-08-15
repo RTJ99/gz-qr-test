@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Great Zimbabwe App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background: #f9f9f9;
+    }
+    h1 {
+      color: #333;
+    }
+    a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 18px;
+    }
+    .ios {
+      background-color: #0070c9;
+    }
+    .android {
+      background-color: #3ddc84;
+    }
+  </style>
+  <script>
+    const iosLink = "https://apps.apple.com/zw/app/greatzimbabwe/id6747029359";
+    const androidLink = "https://play.google.com/store/apps/details?id=com.rtj99.greatzimbabwe&pcampaignid=web_share";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.href = iosLink;
+      } else if (/android/i.test(userAgent)) {
+        window.location.href = androidLink;
+      } else {
+        document.getElementById("links").style.display = "block";
+      }
+    });
+  </script>
+</head>
+<body>
+  <h1>Download Great Zimbabwe App</h1>
+  <div id="links" style="display: none;">
+    <a href="https://apps.apple.com/zw/app/greatzimbabwe/id6747029359" class="ios">Download for iOS</a>
+    <a href="https://play.google.com/store/apps/details?id=com.rtj99.greatzimbabwe&pcampaignid=web_share" class="android">Download for Android</a>
+  </div>
+</body>
+</html>
